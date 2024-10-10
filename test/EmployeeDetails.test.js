@@ -9,6 +9,6 @@ contract("EmployeeDetails", (accounts) => { // Define what is going to be tested
     
     assert.equal(employee[0], "Alice", "Name should be Alice"); // asserting of checking the output  and the description/error statment in case there is an error
     assert.equal(employee[1].toNumber(), 28, "Age should be 28"); // here we are accessing the data in the form of arrays
-    assert.equal(employee[2], "Developer", "Position should be Developer");
+    assert.equal(employee[2], "Developer", "Position should be Developer"); // here we are posting the designation
   });
 });
