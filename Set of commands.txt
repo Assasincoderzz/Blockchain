@@ -4,7 +4,6 @@ To implement and test a Solidity contract for managing employee details, let's b
 Here is a simple Solidity contract that allows setting, updating, and retrieving employee details.
 
 solidity
-Copy code
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
@@ -37,14 +36,12 @@ contract EmployeeDetails {
 a. Compile the contract:
 Run the following command to compile the contract using Truffle:
 
-bash
-Copy code
+
 truffle compile
 b. Migration Script:
 You need a migration script to deploy the contract. Create a migration file, for example, 2_deploy_employee_details.js in the migrations folder.
 
-javascript
-Copy code
+
 const EmployeeDetails = artifacts.require("EmployeeDetails");
 
 module.exports = function (deployer) {
@@ -53,42 +50,34 @@ module.exports = function (deployer) {
 c. Migrate the contract to your local blockchain:
 Make sure the development network is running (e.g., using Ganache), and then run:
 
-bash
-Copy code
+
 truffle migrate --reset --network development
 3. Interacting with the Deployed Contract
 a. Open the Truffle console:
-bash
-Copy code
+
 truffle console --network development
 b. Get a deployed instance of the contract:
-javascript
-Copy code
+
 const employeeDetails = await EmployeeDetails.deployed();
 c. Set employee details:
-javascript
-Copy code
+
 await employeeDetails.setEmployee(1, "John Doe", 30, "Engineer");
 d. Get employee details:
-javascript
-Copy code
+
 const employee = await employeeDetails.getEmployee(1);
 console.log(employee);
 e. Update employee details:
-javascript
-Copy code
+
 await employeeDetails.updateEmployee(1, "John Doe", 31, "Senior Engineer");
 f. Verify the updated details:
-javascript
-Copy code
+
 const updatedEmployee = await employeeDetails.getEmployee(1);
 console.log(updatedEmployee);
 4. Testing the Contract
 To test the contract, Truffle uses the Mocha testing framework with Chai assertions. Below is a simple test that verifies the functionality of setting and getting employee details.
 
 a. Test file: test/employeeDetails.js
-javascript
-Copy code
+
 const EmployeeDetails = artifacts.require("EmployeeDetails");
 
 contract("EmployeeDetails", (accounts) => {
@@ -125,8 +114,7 @@ contract("EmployeeDetails", (accounts) => {
 5. Running Tests
 To run the tests, use the following command:
 
-bash
-Copy code
+
 truffle test
 Overview
 Contract: Defines employee information (name, age, position).
