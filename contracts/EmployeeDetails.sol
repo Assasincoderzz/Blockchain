@@ -3,9 +3,9 @@ pragma solidity ^0.8.0; //version to be used
 
 contract EmployeeDetails { //name od the contract
     struct Employee { //the structure of the contract
-        string name;
-        uint age;
-        string position;
+        string name; //setting the name 
+        uint age; //setting the age
+        string position; //setting the position of the user
     }
 
     mapping(uint => Employee) public employees; //Mapping an index which is unsigned int to an instance of Employee struct 
@@ -18,7 +18,7 @@ contract EmployeeDetails { //name od the contract
 
     function getEmployee(uint _id) public view returns (string memory, uint, string memory) { //what it  should return is also given, and the view keyword tells that it simply reads and doesnt modify the blockchain
         Employee memory employee = employees[_id]; // the data retrieved is stored in the memory rather than the storage as storage is a persistent one and costs more to change than memory
-        return (employee.name, employee.age, employee.position);
+        return (employee.name, employee.age, employee.position); //returning the value
     }
 
     function updateEmployee(uint _id, string memory _name, uint _age, string memory _position) public {
