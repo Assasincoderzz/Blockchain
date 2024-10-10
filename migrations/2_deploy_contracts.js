@@ -1,4 +1,4 @@
-const EmployeeDetails = artifacts.require("EmployeeDetails"); //imports the compiled contract
+const EmployeeDetails = artifacts.require("EmployeeDetails"); //imports the compiled contract, this imports the modules of the truffle that are required the deploy
 
 module.exports = function(deployer) { // migrating a function/contract from the compiled form to the blockchain using the module function present in truffle migration system
   deployer.deploy(EmployeeDetails); // tells truffle to export this contract to the BC
